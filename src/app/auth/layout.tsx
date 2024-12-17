@@ -38,7 +38,7 @@ const Layout = async ({ children }: Props) => {
           something never done before 😉
         </p>
         <Image
-          src="/images/app-ui.png"
+          src="/images/app-ui.jpg"
           alt="app image"
           loading="lazy"
           sizes="30"
