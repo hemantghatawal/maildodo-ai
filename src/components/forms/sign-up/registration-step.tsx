@@ -8,9 +8,18 @@ import dynamic from "next/dynamic";
 
 type Props = {};
 
+const SpinnerWrapper = () => {
+  return <Spinner />;
+};
+
 const DetailForm = dynamic(() => import("./account-details-form"), {
   ssr: false,
-  loading: Spinner,
+  loading: SpinnerWrapper,
+});
+
+const OTPForm = dynamic(() => import("./otp-form"), {
+  ssr: false,
+  loading: SpinnerWrapper,
 });
 
 const RegistrationFormStep = (props: Props) => {
@@ -35,9 +44,9 @@ const RegistrationFormStep = (props: Props) => {
         />
       );
     case 2:
-      return <DetailForm></DetailForm>;
+      return <DetailForm register={register} errors={errors} />;
     case 3:
-      return <h1>STEP 2</h1>;
+      return <OTPForm onOTP={onOTP} setOnOTP={setOnOTP} />;
   }
   return <div></div>;
 };
