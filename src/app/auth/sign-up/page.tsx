@@ -1,5 +1,5 @@
 import React from "react";
-import HighLightBar from "./highlight-bar";
+import HighLightBar from "../../../components/forms/sign-up/highlight-bar";
 import SignUpFormProvider from "@/components/forms/sign-up/form-provider";
 import RegistrationFormStep from "@/components/forms/sign-up/registration-step";
 import ButtonHandler from "@/components/forms/sign-up/button-handler";
