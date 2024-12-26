@@ -93,12 +93,12 @@ export default async function Home() {
         ))}
       </div>
 
-      <section className="flex justify-center items-center flex-col gap-4 mt-28">
+      {/* <section className="flex justify-center items-center flex-col gap-4 mt-28">
         <h2 className="text-4xl text-center">News Room</h2>
         <p className="text-muted-foreground text-center max-w-lg">
           Explore our insights on AI, technology, and optimizing your business.
         </p>
-      </section>
+      </section> */}
     </main>
   );
 }
