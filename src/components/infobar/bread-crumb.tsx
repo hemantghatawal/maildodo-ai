@@ -1,9 +1,12 @@
 "use client";
+import useSidebar from "@/hooks/use-sidebar";
 import React from "react";
+import { Loader } from "../loader";
+import { Switch } from "../ui/switch";
 
 type Props = {};
 
-function showPageInfo(page: string) {
+function showPageInfo(page: string | undefined) {
   switch (page) {
     case "settings":
       return "Manage you account settings, preferences and integrations";
@@ -21,13 +24,19 @@ function showPageInfo(page: string) {
 }
 
 const BreadCrumb = (props: Props) => {
-  // WIP: Set up use sidebar hook for real time chat and chatbot stuff
-//   WIP: setup the description and switch component
+  const { chatRoom, expand, loading, onActiveRealTime, onExpand, page, realtime } =
+    useSidebar();
   return (
     <div className="flex flex-col">
       <div className="flex gap-5 items-center">
-        <h2 className="text-3xl font-bold capitalize">Title</h2>
-        <p className="text-gray-500 text-sm">{showPageInfo("")}</p>
+        <h2 className="text-3xl font-bold capitalize">{page}</h2>
+        {page === "conversation" && chatRoom && <Loader loading={loading} className="p-0 inline">
+          <Switch defaultChecked={realtime}
+            onClick={(e) => onActiveRealTime(e)}
+            className="data-[state=checked]:bg-orange data-[state=unchecked]:bg-peach"
+          />
+          </Loader>}
+        <p className="text-gray-500 text-sm">{showPageInfo(page)}</p>
       </div>
     </div>
   );
