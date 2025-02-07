@@ -9,6 +9,11 @@ export type DomainSettingsProps = {
   welcomeMessage?: string;
 };
 
+export type HelpDeskQuestionsProps = {
+  question: string;
+  answer: string;
+};
+
 export const AddDomainSchema = z.object({
   domain: z
     .string()
@@ -67,3 +72,27 @@ export const DomainSettingsSchema = z
       path: ["image"],
     }
   );
+
+export const HelpDeskQuestionsSchema = z.object({
+  question: z.string().min(1, { message: "Question cannot be left empty" }),
+  answer: z.string().min(1, { message: "Answer cannot be left empty" }),
+});
+
+export const FilterQuestionsSchema = z.object({
+  question: z.string().min(1, { message: "Question cannot be left empty" }),
+});
+
+export const AddProductSchema = z.object({
+  name: z
+    .string()
+    .min(3, { message: "The name must have atleast 3 characters" }),
+  image: z
+    .any()
+    .refine((files) => files?.[0]?.size <= MAX_UPLOAD_SIZE, {
+      message: "Your file size must be less than 2MB",
+    })
+    .refine((files) => ACCEPTED_FILE_TYPES.includes(files?.[0]?.type), {
+      message: "only JPG, JPEG & PNG are accepted file formats",
+    }),
+  price: z.string(),
+});
