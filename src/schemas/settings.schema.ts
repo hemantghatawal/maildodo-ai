@@ -14,6 +14,10 @@ export type HelpDeskQuestionsProps = {
   answer: string;
 };
 
+export type FilterQuestionsProps = {
+  question: string;
+};
+
 export const AddDomainSchema = z.object({
   domain: z
     .string()
