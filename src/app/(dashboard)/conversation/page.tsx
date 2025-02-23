@@ -19,7 +19,7 @@ const ConversationPage = async (props: Props) => {
         <div className="px-5">
           <InfoBar />
         </div>
-        {/* <Messenger /> */}
+        <Messenger />
       </div>
     </div>
   );
