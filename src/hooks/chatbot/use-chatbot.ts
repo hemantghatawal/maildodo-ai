@@ -7,7 +7,6 @@ import {
 import { zodResolver } from '@hookform/resolvers/zod'
 import { useEffect, useRef, useState } from 'react'
 import { UploadClient } from '@uploadcare/upload-client'
-
 import { useForm } from 'react-hook-form'
 
 const upload = new UploadClient({
@@ -107,7 +106,7 @@ export const useChatBot = () => {
   }, [])
 
   const onStartChatting = handleSubmit(async (values) => {
-    console.log('ALL VALUES', values)
+    console.log('ALL VALUES ====> ', values)
 
     if (values.image.length) {
       console.log('IMAGE fROM ', values.image[0])

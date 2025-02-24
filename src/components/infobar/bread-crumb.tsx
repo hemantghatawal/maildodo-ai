@@ -17,7 +17,7 @@ function showPageInfo(page: string | undefined) {
     case "email-marketing":
       return "Send bulk emails to your customers";
     case "integration":
-      return "Connect third-party applications into Maildodo-AI";
+      return "Connect third-party applications into MailDodo-AI";
     default:
       return "Modify domain settings, change chatbot options, enter sales questions and train your bot to do what you want it to.";
   }
