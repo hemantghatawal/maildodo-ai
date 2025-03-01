@@ -244,7 +244,7 @@ export const onAiChatBotAssistant = async (
             },
           ],
           model: 'gpt-3.5-turbo',
-        })
+        }) 
 
         if (chatCompletion.choices[0].message.content?.includes('(realtime)')) {
           const realtime = await client.chatRoom.update({

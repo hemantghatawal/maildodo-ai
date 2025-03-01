@@ -197,7 +197,7 @@ export const useChatBot = () => {
 }
 
 export const useRealTime = (
-  chatRoom: string,
+  chatRoomId: string,
   setChats: React.Dispatch<
     React.SetStateAction<
       {
@@ -211,7 +211,7 @@ export const useRealTime = (
   const counterRef = useRef(1)
 
   useEffect(() => {
-    pusherClient.subscribe(chatRoom)
+    pusherClient.subscribe(chatRoomId);
     pusherClient.bind('realtime-mode', (data: any) => {
       console.log('✅', data)
       if (counterRef.current !== 1) {
@@ -227,7 +227,7 @@ export const useRealTime = (
     })
     return () => {
       pusherClient.unbind('realtime-mode')
-      pusherClient.unsubscribe(chatRoom)
+      pusherClient.unsubscribe(chatRoomId);
     }
   }, [])
 }

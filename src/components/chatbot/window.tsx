@@ -16,7 +16,6 @@ import { Paperclip, Send } from 'lucide-react'
 import { Label } from '../ui/label'
 import { CardDescription, CardTitle } from '../ui/card'
 import Accordion from '../accordian'
-import UploadButton from '../upload-button'
 
 type Props = {
   errors: any
@@ -65,7 +64,6 @@ export const BotWindow = forwardRef<HTMLDivElement, Props>(
       setChat,
       textColor,
       theme,
-      help,
     },
     ref
   ) => {
@@ -83,7 +81,7 @@ export const BotWindow = forwardRef<HTMLDivElement, Props>(
             </Avatar>
             <div className="flex items-start flex-col">
               <h3 className="text-lg font-bold leading-none">
-                Sales Rep - Web Prodigies
+                 Sales Rep - MailDodo
               </h3>
               <p className="text-sm">{domainName.split('.com')[0]}</p>
               {realtimeMode?.mode && (
@@ -169,7 +167,7 @@ export const BotWindow = forwardRef<HTMLDivElement, Props>(
               {helpdesk.map((desk) => (
                 <Accordion
                   key={desk.id}
-                  trigger={desk.question}
+                  trigger={desk.question}  
                   content={desk.answer}
                 />
               ))}
@@ -177,7 +175,7 @@ export const BotWindow = forwardRef<HTMLDivElement, Props>(
           </TabsContent>
         </TabsMenu>
         <div className="flex justify-center ">
-          <p className="text-gray-400 text-xs">Powered By Web Prodigies</p>
+          <p className="text-gray-400 text-xs">Powered By MailDodo AI</p>
         </div>
       </div>
     )
