@@ -3,7 +3,6 @@ import { Label } from "@/components/ui/label";
 import React from "react";
 import { FieldErrors, FieldValues, UseFormRegister } from "react-hook-form";
 import { ErrorMessage } from "@hookform/error-message";
-import { Select } from "@/components/ui/select";
 import { Textarea } from "@/components/ui/textarea";
 
 type Props = {
@@ -17,6 +16,7 @@ type Props = {
   errors: FieldErrors<FieldValues>;
   lines?: number;
   form?: string;
+  defaultValue?: string;
 };
 
 const FormGenerator = ({
@@ -24,6 +24,7 @@ const FormGenerator = ({
   inputType,
   name,
   placeholder,
+  defaultValue,
   register,
   type,
   form,
@@ -42,6 +43,7 @@ const FormGenerator = ({
             type={type}
             placeholder={placeholder}
             form={form}
+            defaultValue={defaultValue}
             {...register(name)}
           />
           <ErrorMessage
@@ -88,6 +90,7 @@ const FormGenerator = ({
             form={form}
             {...register(name)}
             rows={lines}
+            defaultValue={defaultValue}
           />
           <ErrorMessage
             errors={errors}
