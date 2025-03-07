@@ -111,3 +111,45 @@ export const saveAnswers = async (
     console.log(error);
   }
 };
+
+export const onGetAllBookingsForCurrentUser = async (clerkId: string) => {
+  try {
+    const bookings = await client.bookings.findMany({
+      where: {
+        Customer: {
+          Domain: {
+            User: {
+              clerkId,
+            },
+          },
+        },
+      },
+      select: {
+        id: true,
+        slot: true,
+        createdAt: true,
+        date: true,
+        email: true,
+        domainId: true,
+        Customer: {
+          select: {
+            Domain: {
+              select: {
+                name: true,
+              },
+            },
+          },
+        },
+      },
+    });
+
+    if (bookings) {
+      return {
+        bookings,
+      };
+    }
+  } catch (error) {
+    console.log(error);
+  }
+};
+
