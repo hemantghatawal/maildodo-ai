@@ -14,6 +14,12 @@ export type HelpDeskQuestionsProps = {
   answer: string;
 };
 
+export type AddProductProps = {
+  name: string;
+  image: any;
+  price: string;
+};
+
 export type FilterQuestionsProps = {
   question: string;
 };
