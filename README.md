@@ -102,5 +102,5 @@ We welcome contributions! Follow these steps:
 This project is licensed under the [MIT License](LICENSE).
 
 ## ⭐ Support & Contact
-- Visit my LinkedIn: [Hemant Ghatwal](https://www.linkedin.com/in/hemant-ghatawal/)
+- Visit my LinkedIn: [Hemant Ghatawal](https://www.linkedin.com/in/hemant-ghatawal/)
 - Email: ghatwal35@gmail.com
