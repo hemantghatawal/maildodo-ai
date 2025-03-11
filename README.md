@@ -88,7 +88,7 @@ DATABASE_URL=
 npm run dev
 ```
 
-Visit [https://maildodo-lkbo9l0pz-hemantghatawals-projects.vercel.app/](https://maildodo-lkbo9l0pz-hemantghatawals-projects.vercel.app/) to see Maildodo in action! 🎉
+Visit [https://maildodo-i7n07z5k6-hemantghatawals-projects.vercel.app/](https://maildodo-i7n07z5k6-hemantghatawals-projects.vercel.app/) to see Maildodo in action! 🎉
 
 ## 🤝 Contribution
 We welcome contributions! Follow these steps:
