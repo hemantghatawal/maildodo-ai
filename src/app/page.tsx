@@ -84,7 +84,7 @@ export default async function Home() {
               </div>
               <Link
                 href={`/dashbord?plan=${card.title}`}
-                className="bg-[#f3d299] border-orange border-2 p-2 w-full text-center font-bold rounded-md"
+                className="bg-[#f3d299] dark:bg-[#ffa947] border-orange border-2 p-2 w-full text-center font-bold rounded-md"
               >
                 Get Started
               </Link>

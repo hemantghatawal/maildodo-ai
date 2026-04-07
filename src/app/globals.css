@@ -181,3 +181,8 @@ body {
   width: 100% !important;
   border-radius: 20px;
 }
+
+/* to make logo on home page adept to dark theme */
+.dark .logo {
+  filter: brightness(0) invert(1);
+}
